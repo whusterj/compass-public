@@ -1,0 +1,54 @@
+##
+## PASSWORD PROTECTION
+##
+## Uncomment the following to wrap the site in Basic HTTP Auth, for
+## example while we are working on it, but what to generally allow
+## access to some authorized users.
+##
+AuthUserFile /home/compass/.htpasswd
+AuthGroupFile /dev/null
+AuthName EnterPassword
+AuthType Basic
+
+require user compass
+
+##
+## MAINTENANCE-PAGE REDIRECT
+##
+## Uncomment the following when we need to bring the site down
+## for maintenance, but still need some external access
+##
+<IfModule mod_rewrite.c>
+ RewriteEngine on
+ ## IP Addresses to allow:
+ #RewriteCond %{REMOTE_ADDR} !^50\.190\.23\.26
+ #RewriteCond %{REMOTE_ADDR} !^123\.456\.789\.000
+ RewriteCond %{DOCUMENT_ROOT}/maintenance -f
+ RewriteCond %{REQUEST_URI} !/maintenance.html$ [NC]
+ RewriteCond %{REQUEST_URI} !\.(jpe?g?|png|gif) [NC]
+ RewriteRule .* /maintenance.html [R=302,L]
+</IfModule>
+
+
+# For rewrite rules needed for making Wordpress URL friendly
+# See Options -> Permalinks for details and please use the defaults,
+# especially in mind when hosting several blogs on one machine!
+
+##
+## WORDPRESS: Configuration for a single blog hosted on / (root of the website)
+##
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteBase /
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /index.php [L]
+#</IfModule>
+
+##
+## WORDPRESS: Configuration for a multi-site wordpress installation using subdomains
+##
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteBase /
+#RewriteRule ^index\.php$ - [L]
