@@ -1,0 +1,41 @@
+#mainNav {
+    height: 64px;
+    position: fixed;
+    background: white;
+    width: 100%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    z-index: 1001;
+}
+
+#mainNav img {
+    display: block;
+    margin: 0 auto; 
+    margin-top: 4px;
+    height: 56px;
+}
+
+#banner {
+    padding-top: 64px;
+}
+
+.feature-area {
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+.drop-shadow {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+    transition: box-shadow linear 0.2s;
+}
+a > img.drop-shadow:hover {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.35);
+}
+
+@media (min-width: 470px) {
+
+    #mainNav {
+        position: absolute;
+    }
+
+}
