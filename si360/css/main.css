@@ -11,7 +11,7 @@
     display: block;
     margin: 0 auto; 
     margin-top: 4px;
-    height: 56px;
+    height: 64px;
 }
 
 #banner {
@@ -36,6 +36,11 @@ a > img.drop-shadow:hover {
 
     #mainNav {
         position: absolute;
+        height: 132px;
+    }
+
+    #mainNav img {
+        height: 128px;
     }
 
 }
