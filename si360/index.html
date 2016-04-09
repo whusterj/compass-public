@@ -49,6 +49,26 @@
 
     </section>
 
+    <!-- Begin rebrand announcement modal pop-up -->
+    <div class="si-modal-wrapper">
+      <div class="si-modal-overlay">
+        <div onclick="event.stopPropagation()" id="theModal"
+             class="si-modal" style="max-width: 600px" cloak>
+          <h1 style="text-align: center;">Compass Partners is now...</h1>
+          <img src="/images/si360-logo-small.png" onclick="Modal.closeModal()"
+              style="display: block; margin: 0 auto; width: 100%; max-width: 200px;">
+          <p>Over the past year we have received feedback from our community members requesting that we improve our brand.  We heard that there were issues with duplicity, as there are many other Compass organizations out there (as well as others named Compass Partners!).  We also heard that our name did not best represent to the world our mission of instilling a socially conscious mindset in college students through entrepreneurship training that produces values-driven leaders ready to address the world's most pressing issues.  As the result of this feedback we embarked on a year-long process to evaluate our brand that included feedback from student and alumni leaders.  This process honed in on the core elements of the Compass experience and further explored the benefits and challenges of our current brand.  At the end of the process it was apparent that we needed to rebrand to best show our mission and values to the world.</p>
+          <p>In the rebranding process we wanted to find a name that speaks to our past, present, and future students and alumni as well as our partner organizations.  We wanted something clear and simple, that both makes an impact and leaves you wanting to learn more.  We looked for a name that would honor the breadth of the ways you each will live out our four core values.  We also created a tagline that clearly spelled out what we're all about and what’s so distinctive about us as an organization.  In developing a color scheme we decided to both keep our current yellow as a throwback to our history and community.  We also chose to unveil a new, fresh, and vibrant color that is widely recognized as denoting social consciousness.  We also kept the logo simple enough that our students could easily replicate it when they create their campus-specific recruiting materials.</p>
+          <p>We hope you are as excited about our new name and brand as we are!</p>
+          <div style="text-align: center;">
+            <button onclick="Modal.closeModal(event)" class="btn btn-primary">
+              Close &amp; Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End rebrand announcement modal pop-up -->
 
     <div class="container">
         
@@ -237,6 +257,39 @@
 
     </div>
 
+
+<script>
+
+var Modal = {};
+
+// Simple modal message to be shown on page load:
+document.addEventListener("DOMContentLoaded", function () {
+
+    Modal.theModal = document.getElementById('theModal');
+
+    // uncloak cloaked elems:
+    Modal.theModal.className += ' ready';
+
+    document.addEventListener('click', function (e) {
+      Modal.closeModal(e);
+    });
+
+    Modal.openModal = function (e) {
+      if (e) { e.stopPropagation() };
+      document.body.className += 'si-modal-open';
+    }
+
+    Modal.closeModal = function (e) {
+      if (e) { e.stopPropagation(); }
+      document.body.className = document.body.className.replace('si-modal-open', '');
+    }
+
+    // Open the modal
+    Modal.openModal();
+    
+});
+
+</script>
 
 </body>
 </html>

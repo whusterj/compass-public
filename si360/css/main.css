@@ -4,7 +4,7 @@
     background: white;
     width: 100%;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
-    z-index: 1001;
+    z-index: 998;
 }
 
 #mainNav img {
@@ -43,4 +43,112 @@ a > img.drop-shadow:hover {
         height: 128px;
     }
 
+}
+
+/* Rebrand announcement modal */
+.si-modal-wrapper {
+    display: none;
+    position: fixed;
+    overflow: auto;
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.si-modal {
+    z-index: 1001;
+    position: relative;
+    width: 95%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding:24px;
+    color: rgb(80, 80, 80);
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.si-modal.open {
+  display: initial;
+}
+
+.si-modal.closed {
+  display: none;
+}
+
+.si-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    overflow-y: scroll;
+    background: rgba(255,255,255,0.95);
+}
+
+.si-modal-open {
+  overflow-y: hidden;
+}
+
+.si-modal-open .si-modal-wrapper {
+  display: initial;
+}
+
+// .modal-dialog {
+//     z-index: 1001;
+//     position: relative;
+//     width: 95%;
+//     margin: 30px auto;
+//     color: rgb(80, 80, 80);
+//     background-color: #fff;
+//     border-radius: 6px;
+//     border: 1px solid rgb(120, 120, 120);
+// }
+
+// .modal .content {
+//     padding: 30px;
+// }
+
+// .modal .closeBtn {
+//     display: inline-block;
+//     position: absolute;
+//     top: 10px;
+//     right: 10px;
+//     padding: 5px;
+//     cursor: pointer;
+
+//     color: rgb(220,220,220);
+//     font-weight: bold;
+//     font-family: 'arial', 'sans-serif';
+//     font-size: 3rem;
+//     text-shadow: 0 0 2px rgb(80,80,80);
+//     line-height: 0.5em;
+
+//     // Unset button styles
+//     background: none;
+//     border: none;
+// }
+
+// .modal .closeBtn:hover,
+// .modal .closeBtn:focus {
+//     color: white;
+//     outline: @orange dotted 2px;
+//     text-shadow: 0 0 1px @orange,
+//                  0 0 6px @orange;
+// }
+
+
+@media(min-width: @screen-sm-min) {
+  /* Drop shadow for the modal dialog on large screens.
+     Mobile devices can't really handle the rendering
+     overhead and also don't need it as much to set the
+     dialog apart from the background.
+  */
+  .si-modal {
+      box-shadow: 4px 4px 80px #000;
+  }
 }

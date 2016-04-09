@@ -2,7 +2,7 @@
 link-compass-static:
   file.symlink:
     - name: /var/www/compass
-    - target: /home/vagrant/compass/public_html/
+    - target: /home/vagrant/compass/si360/
     - makedirs: True
     - require:
       - pkg: apache2
